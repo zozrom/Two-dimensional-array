@@ -4,6 +4,8 @@ int main()
 {
 	int  array[10][10];
 	int  rows,cols ,k;
+	int sum=0;
+	int r=1;
 	do
 	{
 		cout << "Enter the number rows in array :" << endl;
@@ -32,6 +34,20 @@ int main()
 			cout << array[i][j] << "\t";
 		}
 		cout << endl;
+	}
+	
+
+	for (int i = 0; i < cols; i++)
+	{
+		for (int j = 0; j < rows; j++)
+		{
+			sum = sum+array[j][i];
+		}
+		
+		cout << r << " sum cols   :" <<sum << endl;
+		r++;
+
+		sum = 0;
 	}
 	
 	return 0;
