@@ -3,9 +3,10 @@ using namespace std;
 int main()
 {
 	int  array[10][10];
-	int  rows,cols ,k;
+	int  rows,cols ,k=0;
 	int sum=0;
-	int r=1;
+	int m=0;
+	int c = 0;
 	do
 	{
 		cout << "Enter the number rows in array :" << endl;
@@ -27,6 +28,8 @@ int main()
 			
 		}
 	}
+
+
 	for (int  i = 0; i < rows; i++)
 	{
 		for (int  j = 0; j < cols; j++)
@@ -36,19 +39,32 @@ int main()
 		cout << endl;
 	}
 	
-
-	for (int i = 0; i < cols; i++)
+	int y = 0;
+	int r = 0;
+	for (int i = 0; i <cols; i++)
 	{
 		for (int j = 0; j < rows; j++)
 		{
-			sum = sum+array[j][i];
+			sum = sum + array[j][i];
 		}
 		
-		cout << r << " sum cols   :" <<sum << endl;
+		
+		for (int  t = rows; t >0 ; t--)
+		{
+			if (array[y][r] > sum - array[y][r])
+			{
+				c++;
+			}
+			y++;
+		}
 		r++;
+		y = 0;
+		
 
 		sum = 0;
+		
 	}
+	cout << "number of specials :" << c;
 	
 	return 0;
 }
